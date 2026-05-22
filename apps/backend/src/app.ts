@@ -1,12 +1,11 @@
-import { Hono } from "hono";
+import route from "@/routes/route"
+import { Hono } from "hono"
 
 const app = new Hono()
 
-app.get("/", (c) => {
-    return c.text("Hello World!")
-})
+app.route("/api", route)
 
 export default {
     port: 3000,
-    fetch: app.fetch,
+    fetch: app.fetch
 }
