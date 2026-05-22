@@ -10,6 +10,38 @@
 
 ---
 
+# Communication Rules
+
+## Clarification Questions
+
+Before implementing large changes, unclear requirements, or new architecture decisions, always ask short clarification questions using a simple Yes/No format.
+
+The goal is to:
+- reduce ambiguity
+- avoid incorrect implementation
+- align with the expected architecture
+- make instructions easier for junior developers or lower-cost AI models
+
+Examples:
+
+```txt
+Should authentication be shared across all apps? (Yes/No)
+
+Should this package support server-side usage only? (Yes/No)
+
+Should this feature use Bun-native APIs? (Yes/No)
+
+Should the new package be reusable across apps? (Yes/No)
+```
+
+Rules:
+- Keep questions short and direct.
+- Prefer Yes/No questions whenever possible.
+- Avoid overly complex discussions unless necessary.
+- Ask only the minimum number of questions required for implementation clarity.
+
+---
+
 # Runtime & Package Manager Rules
 
 ## Bun Standardization
