@@ -12,6 +12,7 @@
         "lib": ["ESNext"],
         "skipLibCheck": true,
         "noEmit": true,
+        "types": ["@types/bun"],
         "paths": {
             "@/*": ["./src/*"]
         }
