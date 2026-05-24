@@ -1,5 +1,5 @@
 const js = require('@eslint/js')
-const ts = require('eslint-typescript')
+const ts = require('typescript-eslint')
 
 /**
  * @type {import('eslint').Linter.Config[]}
