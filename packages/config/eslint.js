@@ -13,6 +13,10 @@ module.exports = [
       '@typescript-eslint/consistent-type-imports': [
         'error',
         { fixStyle: 'inline-type-imports', prefer: 'type-imports' }
+      ],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { varsIgnorePattern: '^_' }
       ]
     }
   },
