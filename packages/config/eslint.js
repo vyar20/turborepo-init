@@ -22,6 +22,9 @@ module.exports = [
   },
   {
     files: ['**/*.js'],
-    rules: {}
+    rules: {
+      'no-undef': 0,
+      '@typescript-eslint/no-require-imports': 0
+    }
   }
 ]
