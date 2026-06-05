@@ -39,5 +39,3 @@ export const getHTTPStatus = (statusText: keyof typeof HTTP_STATUS_TEXT) => {
     const [_, statusCode] = Object.entries(HTTP_STATUS).find(([key]) => key === statusText) || []
     return statusCode
 }
-
-getHTTPStatus("OK")
