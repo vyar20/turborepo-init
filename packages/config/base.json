@@ -1,20 +1,17 @@
 {
-    "$schema": "https://www.schemastore.org/tsconfig",
-    "compilerOptions": {
-        "strict": true,
-        "target": "esnext",
-        "module": "esnext",
-        "moduleResolution": "bundler",
-        "moduleDetection": "force",
-        "esModuleInterop": true,
-        "allowJs": true,
-        "resolveJsonModule": true,
-        "lib": ["ESNext"],
-        "skipLibCheck": true,
-        "noEmit": true,
-        "types": ["@types/bun"],
-        "paths": {
-            "@/*": ["./src/*"]
-        }
-    }
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "strict": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "lib": ["ESNext"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["@types/bun"]
+  }
 }
