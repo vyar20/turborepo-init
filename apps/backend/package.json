@@ -5,7 +5,10 @@
     "scripts": {
         "dev": "NODE_ENV=development bun --env-file=.env --hot src/app.ts"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@repo/utils": "workspace:*",
+        "@repo/env": "workspace:*"
+    },
     "devDependencies": {
         "@repo/config": "workspace:*"
     }

@@ -1,3 +1,4 @@
+import chalk from "chalk"
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -38,4 +39,10 @@ export enum HTTP_STATUS_TEXT {
 export const getHTTPStatus = (statusText: keyof typeof HTTP_STATUS_TEXT) => {
     const [_, statusCode] = Object.entries(HTTP_STATUS).find(([key]) => key === statusText) || []
     return statusCode
+}
+
+export const log = {
+    info: (message: unknown) => console.log(chalk.blue(`[INFO]: ${message}`)),
+    error: (message: unknown) => console.log(chalk.red(`[ERROR]: ${message}`)),
+    warn: (message: unknown) => console.log(chalk.yellow(`[WARN]: ${message}`))
 }

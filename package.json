@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "hono": "^4.12.19",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "zod": "^4.4.3"
   }
 }
