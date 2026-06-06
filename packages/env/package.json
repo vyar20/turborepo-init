@@ -6,7 +6,6 @@
     ".": "./src/env.ts"
   },
   "dependencies": {
-    "@repo/utils": "workspace:*"
   },
   "devDependencies": {
     "@repo/config": "workspace:*"
