@@ -3,13 +3,16 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "dev": "NODE_ENV=development bun --env-file=.env --hot src/app.ts"
+        "dev": "NODE_ENV=development bun --env-file=.env --hot src/app.ts",
+        "db": "bun --env-file=.env prisma db push && bun --env-file=.env prisma generate"
     },
     "dependencies": {
-        "@repo/utils": "workspace:*",
-        "@repo/env": "workspace:*"
+        "@prisma/client": "^7.8.0",
+        "@repo/env": "workspace:*",
+        "@repo/utils": "workspace:*"
     },
     "devDependencies": {
-        "@repo/config": "workspace:*"
+        "@repo/config": "workspace:*",
+        "prisma": "^7.8.0"
     }
 }
