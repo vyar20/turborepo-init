@@ -3,13 +3,15 @@ import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export class ErrorHandler extends Error {
-    status: string
+    status: keyof typeof HTTP_STATUS_TEXT
     statusCode: number
+    details: unknown
 
-    constructor(status: string, statusCode: number) {
+    constructor(status: keyof typeof HTTP_STATUS_TEXT, details?: unknown) {
         super()
         this.status = status
-        this.statusCode = statusCode
+        this.statusCode = getHTTPStatus(status) || HTTP_STATUS.INTERNAL_SERVER_ERROR
+        this.details = details
     }
 }
 
@@ -24,7 +26,8 @@ export enum HTTP_STATUS {
     BAD_REQUEST = 400,
     UNAUTHORIZED = 401,
     FORBIDDEN = 403,
-    NOT_FOUND = 404
+    NOT_FOUND = 404,
+    INTERNAL_SERVER_ERROR = 500
 }
 
 export enum HTTP_STATUS_TEXT {
@@ -33,12 +36,13 @@ export enum HTTP_STATUS_TEXT {
     BAD_REQUEST = "BAD_REQUEST",
     UNAUTHORIZED = "UNAUTHORIZED",
     FORBIDDEN = "FORBIDDEN",
-    NOT_FOUND = "NOT_FOUND"
+    NOT_FOUND = "NOT_FOUND",
+    INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR"
 }
 
 export const getHTTPStatus = (statusText: keyof typeof HTTP_STATUS_TEXT) => {
     const [_, statusCode] = Object.entries(HTTP_STATUS).find(([key]) => key === statusText) || []
-    return statusCode
+    return statusCode as number
 }
 
 export const log = {
